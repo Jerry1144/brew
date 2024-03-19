@@ -179,8 +179,7 @@ module Homebrew
             check_new_version(formula, tap_remote_repo, url: old_url, tag: new_tag) if new_version.blank?
             resource_path, forced_version = fetch_resource_and_forced_version(formula, new_version, old_url,
                                                                               tag: new_tag)
-            new_revision = Utils.popen_read("git", "-C", resource_path.to_s, "rev-parse", "-q", "--verify",
-                                            "HEAD")
+            new_revision = Utils.popen_read("git", "-C", resource_path.to_s, "rev-parse", "-q", "--verify", "HEAD")
             new_revision = new_revision.strip
           elsif new_revision.blank?
             odie "#{formula}: the current URL requires specifying a `--revision=` argument."
