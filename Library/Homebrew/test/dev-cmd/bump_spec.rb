@@ -3,7 +3,7 @@
 require "cmd/shared_examples/args_parse"
 require "dev-cmd/bump"
 
-RSpec.describe Homebrew::DevCmd::Bump  do
+RSpec.describe Homebrew::DevCmd::Bump do
   it_behaves_like "parseable arguments"
 
   describe "formula", :integration_test, :needs_homebrew_curl, :needs_network do
